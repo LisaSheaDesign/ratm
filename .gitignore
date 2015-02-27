@@ -1,2 +1,5 @@
 _assets/
 .DS_Store
+# General CodeKit files to ignore
+config.codekit
+/min
