@@ -1,0 +1,81 @@
+/* ======================= Bio ======================= */
+
+#bioPage {position: relative; z-index: 0;}
+.bandBioLink {
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    cursor: pointer;
+    color: #ccc;
+     font-size: 12px;
+    &:hover {
+        color: $yellow;
+        @include transition(color);
+    }
+}
+#memberNav {
+        @include clearfix;
+        position: relative;
+        margin-bottom: 10px;
+    #memberLinks {
+        @include clearfix;
+        position: relative;
+    }
+}
+#bandMemPics {
+    @include clearfix;
+    margin: 0 0 60px 0px;
+    .bioMemPics {
+        position: relative;
+        margin-right: 3%;
+        span {
+            strong {
+                font-family: $highlightFont;
+                display: block;
+                color: $yellow;
+                font-size: 30px;
+            }
+            position: absolute;
+            font-size: 14px;
+            bottom: -50px;
+            color: $light;
+        } 
+    }
+    .active {@include grayscaleColor;}     
+}
+
+.bioCopy strong, #bio strong {color: $orange; font-size: 20px;}
+
+.bioCopy {
+    /*@include span-columns(8);*/
+    a {font-size: 14px;}
+}
+.bioMemPics {
+    cursor: pointer;
+    height: 200px;
+    @include span-columns(3);
+    width: 200px;
+    @include grayscale;
+    &.rhythmPic {@include backImage('/img/rhythm.jpg');}
+    &.papaPic {@include backImage('/img/papa.jpg');}
+    &.evanPic {@include backImage('/img/evanb.jpg');}
+    &.lauraPic {@include backImage('/img/laura.jpg');}
+    &:hover {@include grayscaleColor;}   
+}
+
+.memCarousel-wrapper {
+    @include clearfix;
+    overflow: hidden;
+}
+
+.memCarousel {
+     @include clearfix;
+     width: 4940px;
+    article {
+        float: left;
+        width:944px;
+        padding-right:30px;
+    }
+}
+
+/* ====== Bio END ====== */

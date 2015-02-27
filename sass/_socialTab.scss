@@ -1,0 +1,51 @@
+/* ======================= social tab ======================= */
+
+#socialTab {
+		position: fixed;
+		z-index: 12;
+		font-size: 25px;
+		top: 200px;
+		padding-top: 20px;
+		left: 0;
+		right: 0;
+			li {padding: 5px;}
+			
+			span {margin-left: -1000px; font-size: 20px; font-family: $baseFont; padding-left: 2px;}
+
+			a {
+				@include transition(padding-left); 
+				color: $light; 
+				text-decoration: none;
+				text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
+			}
+			a:hover, .tapSocialTab {
+				padding-left: 10px;
+				@include transition(padding-left); 
+				color: $yellow;
+				span {margin-left: 0;}
+			}
+
+	}//socialTab
+
+
+	.icon-star-full:before {
+		content: "\e9d9";
+	}
+
+	.icon-facebook:before {
+		content: "\ea8e";
+	}
+
+	.icon-twitter3:before {
+		content: "\ea93";
+	}
+
+	.icon-youtube3:before {
+		content: "\ea99";
+	}
+
+	.icon-instagram:before {
+		content: "\ea90";
+	}
+
+	/* ====== social tab END ====== */

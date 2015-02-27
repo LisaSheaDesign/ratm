@@ -1,0 +1,23 @@
+<header>
+	<section>
+		<div id="logoTitle" class="openImg">
+			<section id='navMobileBtn' class="menu">
+	         	<div class="menu-bar"></div>
+	         	<div class="menu-bar"></div>
+	         	<div class="menu-bar"></div>
+	        </section> <!-- navMobileBtn END -->
+		<a href="/"><img id="bandLogo" src="/img/ratm-logo.png"></a>
+			<nav id='headerNav'>
+				<ul>
+					<li class="footerNav"><a id="musicLink" href="music/index.html">Music</a></li>
+					<li class="footerNav"><a id="videosLink" href="videos/index.html">Videos</a></li>
+					<li class="footerNav"><a id="showsLink" href="shows/index.html">Shows</a></li>
+					<li class="footerNav"><a id="photosLink" href="photos/index.html">Photos</a></li>
+					<li class="footerNav"><a id="newsLink" href="news/index.html">News</a></li>
+					<li class="footerNav"><a id="biosLink" href="bios/index.html">Bios</a></li>
+					<li class="footerNav"><a id="contactLink" href="contact/index.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div> <!-- logoTitle/ winHeight END -->
+	</section> 
+</header><!-- header -->

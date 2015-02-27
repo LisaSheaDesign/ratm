@@ -1,0 +1,74 @@
+/* ======================= Header ======================= */
+
+header {
+	@include clearfix;
+	position: relative;
+	background-color: #000;
+	a {text-decoration: none;}
+	#logoTitle { 
+		text-align: center;
+		/*height:100vh;*/
+		z-index: 10;
+		background-color: #000;
+		@include transition(background-image, 1s);
+		@include backImage('../img/ratm-band.jpg', 100%);
+		&.openImg {@include backImage('../img/ratm-band-2.jpg', 100%);}
+		img {width: 80%; cursor: pointer; padding-top: 20px;}
+			.menu {
+				float: left;
+				cursor: pointer;
+				background: rgba($dark, .8);
+				padding: 12px 8px 8px;
+				margin: 2%;
+			}
+
+			.menu-bar {
+				width: 30px;
+				height: 1px;
+				margin-bottom: 4px;
+				padding: 2px 0;
+				border-radius: 10px;
+				background: #fff;
+			}
+			.menu, .menu-bar {@include border-radius(10px);}
+
+	}// logoTitle
+		nav {
+			background: rgba($dark, .7);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		a {
+			color: $orange;
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: 8px 50px;
+			&:hover {
+				color: $yellow;
+				text-decoration: none;
+				@include navHover;
+				@include transition(color);
+				
+			}
+			&.active {
+				outline: none;
+				color: $yellow;
+				border-bottom: 2px solid $yellow;
+				text-decoration: none;
+				@include navHover;
+			}
+		}// nav a
+
+			ul {
+				@include container;
+				padding: 10px;
+				li {
+					display: inline;
+					float: left;
+				} //li
+			} //nav ul
+		} //nav
+} //header
+
+/* ====== Header END ====== */

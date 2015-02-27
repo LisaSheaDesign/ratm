@@ -1,0 +1,27 @@
+/* ======================= music ======================= */
+
+#musicPage { 
+	h2 {padding:10px 0; @include specialFont;}
+	li {line-height: 1.5em;}
+}
+#cdImage {
+	@include span(3); 
+	width:40%; 
+	margin-right:20px;
+}
+
+#CDtext {
+	em, span {font-size: 15px;}
+	em {
+	font-style: italic;
+	line-height: .125em;
+	color: rgb(210, 177, 210);
+	}//em
+	
+}
+
+#CDtext {@include span(9);}
+
+#cdInfo {font-family: $headerFont;}
+
+/* ====== music END ====== */

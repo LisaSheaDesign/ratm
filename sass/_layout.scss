@@ -1,0 +1,193 @@
+/* ======================= Layout ======================= */
+
+.show {display: block;}
+.hide {display: none;}
+
+/* ======= Breakpoints ======= */
+
+/*phone vert 320px*/
+@include breakpoint($narrower) {
+    #headerNav ul li {
+    	display: block; 
+    	float: none;
+    	width: 100%; 
+    	text-align: left;
+    }
+    h2 {font-size: 1.5em;}
+	#headerNav {display: none; position: static; margin-top: 16px; background: rgba($dark, .9);}
+    #headerNav a {display: block;}
+    #logoTitle {height: 224px; border-bottom: 5px solid $dark;}
+	header #logoTitle img {padding-top: 10px;}
+	#logoTitle .menu {display: block; border:1px solid $yellow;}
+	#socialTab {
+		position: fixed; 
+		top: inherit; 
+		bottom:0; 
+		left: 0; 
+		padding-top: 0;
+		padding-left: 15%;
+		background: rgba($dark, .7);
+		li {float: left; padding: 8px;}
+		span {display: none;}
+    	a:hover, .tapSocialTab {
+			padding-left: 0;
+			@include transition(none); 
+			color: $light;
+			span {margin-left: 0;}
+		}
+	}// socialTab
+	#nowPlayingBox {overflow: scroll; img {height: 190px;}}
+	#nowPlaying {top: 0;}
+	#nowPlayBtn {
+		margin-top: 150px;
+		width: 22px;
+		height: 100px;
+		margin-top: 80px;
+		background-position: -24px 0;
+		&.bodyBtn {background-position: -48px;}
+	}
+	#nowPlayVideo {margin-left: 0;}
+	#nowPlaySlides {
+		float: left;
+		width: 205px;
+		margin-bottom: 10px;
+	}
+	.swipeshow {height: 230px;}
+	#cdImage {width: 60%; padding-bottom: 10px;}
+	#cdInfo {float: left;}
+	#video .videos { @include span(12);}
+	#newsPage article {@include span-columns(12);}
+	.latestInstRATM li {@include span(6);}
+	#bandMemPics {margin: 0 0 10px 0px;}
+	#memberNav {overflow-x: scroll;}
+	#memberLinks {width: 570px; height: 225px;}
+	.bandBioLink {bottom: 0; font-size: 14px;}
+	.bioMemPics {width: 125px; height: 125px;}
+	#bandMemPics .bioMemPics.rhythmPic span {bottom: -64px;}
+	#bandMemPics .bioMemPics.papaPic span {bottom: -94px;}
+	.bioCopy, #bio p {width: 30%; font-size: .95em;}
+	footer {padding-bottom: 30px;}
+} //breakpoint
+
+ /*phone vert 375px*/
+@include breakpoint(375px) {
+ 	.bioCopy, #bio p {width: 35%;}
+ 	#socialTab {padding-left: 20%;}
+}
+
+/*phone/tablet hoz 400px*/
+@include breakpoint($narrow) {
+    #cdImage {width: 40%;}
+	#cdInfo {float: none;}
+	#video .videos { @include span(6);}
+	.bioCopy, #bio p {width: 40%;}
+} //breakpoint
+
+/*phone vert 565px*/
+@include breakpoint(565px) {
+    #headerNav {display: block; position: absolute;}
+	#headerNav a {display: inline; padding: 8px 5px;}
+	#logoTitle {border-bottom: 0;}
+	#logoTitle img {padding-top: 20px;}
+	#logoTitle .menu {display: none;}
+	#headerNav ul li {
+		display: inline; 
+		padding: 0;
+		text-align: center;
+	}
+    #socialTab {
+		background: none; 
+		padding-right: 0; 
+		padding-left: 0; 
+		top: 5px;
+		bottom: inherit; 
+		right: inherit;
+	}
+	#socialTab li {float:none; padding-right: 0; padding: 4px;}
+	#nowPlaying {top: 0;}
+	#nowPlayingBox {img {height: 390px;}}
+	#nowPlayBtn {
+		margin-top: 10px;
+		width: 40px;
+		height: 170px;
+		background-position: -40px 0;
+		&.bodyBtn {background-position: -80px;}
+	}
+	#nowPlaySlides {
+		float: left;
+		width: 400px;
+	}
+	.swipeshow {height: 430px;}
+	#contentWrap {width: 80%;}
+	#cdInfo {float: left;}
+	#CDtext {width: 100%; padding-top: 10px;}
+	.bioCopy, #bio p {width: 45%;}
+	footer {padding-bottom: 0;}
+} //breakpoint
+
+/*tablet hoz 600px*/
+@include breakpoint(600px) {
+	#logoTitle {height: 400px;}
+
+}//breakpoint
+
+ /*tablet vert 650px*/
+@include breakpoint($small) { 
+ 	#socialTab {top:120px;}
+ 	h2 {font-size: 2em;}
+ 	.latestInstRATM li {@include span(3);}
+ 	#nowPlayBtn {margin-top: 150px;}
+ 	#memberNav {overflow: hidden;}
+ 	.bioCopy, #bio p {width: 55%;}
+ 	.bandBioLink {right: 40px;}
+ }
+
+/*tablet hoz 768px*/
+@include breakpoint(768px) {
+	#logoTitle {height: 540px;}
+	.bioCopy, #bio p {width: 65%;}
+	.bandBioLink {right: 0; font-size: 12px;}
+	#memberLinks {width: 100%;}
+	#socialTab {top: 130px;}
+}
+
+  /*tablet hoz 960px*/
+@include breakpoint($medium) {
+    #headerNav a {padding: 8px 30px;}
+    #nowPlaying {top: 0;}
+    #nowPlayBtn {margin-top: 250px;}
+    #socialTab {top: 200px; padding-top: 20px;}
+	#socialTab li {padding: 5px;}
+	#newsPage article {@include span(48%);}
+	#contentWrap {@include container;}
+	#CDtext {width: 75%;}
+	#memberLinks {width: 100%; height: 250px;}
+	.bandBioLink {bottom: 0; right: 0;}
+	.bioMemPics {width: 160px; height: 160px;}
+	#bandMemPics .bioMemPics.papaPic span {bottom: -50px;}
+	#bandMemPics .bioMemPics.rhythmPic span {bottom: -64px;}
+	#bandMemPics {margin: 0 0 60px 0px;}
+	.bioCopy, #bio p {width: 85%; font-size: 1.12em;}
+	#socialTab {
+	span {display: inline-block;}
+	a:hover, .tapSocialTab {
+			padding-left: 10px;
+			@include transition(padding-left); 
+			color: $yellow;
+			span {margin-left: 0;}
+		}
+	}
+  } //breakpoint
+ 
+@include breakpoint(1024px) {
+	.bioMemPics {width: 170px; height: 170px;}
+}
+
+ /*desktop 1200px*/
+ @include breakpoint($wide) {
+        .bioCopy, #bio p {width: 100%;} 
+        .bioMemPics {width: 200px; height: 200px;} 
+        #bandMemPics .bioMemPics span, #bandMemPics .bioMemPics.rhythmPic span {bottom: -50px;}    
+  } //breakpoint
+  
+ /* ====== layout END ====== */

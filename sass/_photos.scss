@@ -1,0 +1,14 @@
+/* ======================= photos ======================= */
+
+.latestInstRATM {
+	li {
+		@include span(3);
+	}
+	img {
+		border: 2px solid #464646;
+		@include transition(border);
+		&:hover {border: 2px solid $orange; @include transition(border);}
+	}
+}
+
+/* ====== photos END ====== */
