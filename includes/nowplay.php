@@ -6,7 +6,7 @@
 	<!-- Place all images and links below for slideshow -->
 		<div class="my-gallery swipeshow">
   			<ul class="slides">
-    			<li class="slide"><a href="https://www.facebook.com/events/1559323224332437" target="_blank"><img src="img/slideshow/Show-JavaJoe.jpg" border="0" alt="Java Joes"/></a></li>
+    			<li class="slide"><a href="https://www.facebook.com/events/1559323224332437" target="_blank"><img src="img/slideshow/Show-JavaJoe2.jpg" border="0" alt="Java Joes"/></a></li>
 		    	<li class="slide"><a href="https://www.facebook.com/events/638415109637562" target="_blank"><img src="img/slideshow/Show-tower13.jpg" border="0" alt="Tower 13"/></a></li>
 			</ul>
 			 <div class='dots'></div>

@@ -623,6 +623,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/slideshow\/Show-JavaJoe2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50606,
+		"inputAbbreviatedPath": "\/img\/slideshow\/Show-JavaJoe2.jpg",
+		"outputAbbreviatedPath": "\/img\/slideshow\/Show-JavaJoe2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/slideshow\/Show-tower13.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
