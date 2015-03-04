@@ -3,13 +3,11 @@
 header {
 	@include clearfix;
 	position: relative;
-	background-color: #000;
 	a {text-decoration: none;}
 	#logoTitle { 
 		text-align: center;
 		/*height:100vh;*/
 		z-index: 10;
-		background-color: #000;
 		@include transition(background-image, 1s);
 		@include backImage('../img/ratm-band.jpg', 100%);
 		&.openImg {@include backImage('../img/ratm-band-2.jpg', 100%);}

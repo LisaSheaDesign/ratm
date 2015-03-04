@@ -13,9 +13,10 @@ var deviceWidth = document.documentElement.clientWidth;
 //console.log(wWidth);
 //console.log(wWidth - 80);
 
+$('#logoTitle').css('backgroundColor', '#000'); //set background color to black
 
 	//click nav links to open header
-	$('#headerNav a').click(function() {
+	$('#headerNav a').click(function(e) {
 
 		//load pages html
 		var navUrl = $(this).attr('href');
@@ -83,7 +84,9 @@ var deviceWidth = document.documentElement.clientWidth;
 		{'backgroundPosition': '0 -550px' });
 	}
 
+e.preventDefault();
 return false;
+
 
 });//click on #headerNav a
 
