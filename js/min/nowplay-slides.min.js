@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".my-gallery").swipeshow({autostart:!0,interval:3e3,initial:0,speed:700,friction:.3,mouse:!0,keys:!0,$dots:$("div.dots")}),$(".swipeshow .dots").css({bottom:0,position:"absolute","z-index":100,background:"#000",width:"100%",padding:5})});
