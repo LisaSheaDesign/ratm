@@ -1,7 +1,7 @@
 $(document).ready(function() {
        "use strict";
 
-//fade in color band pic   
+//fade in color band pic
  setTimeout(function(){ $('#logoTitle').removeClass('openImg'); }, 1000);
 
 //set elements to window height and width
@@ -15,13 +15,23 @@ var deviceWidth = document.documentElement.clientWidth;
 
 $('#logoTitle').css('backgroundColor', '#000'); //set background color to black
 
+//on load add the class noScroll to stop scrolling when header not open
+$('body').addClass('noScroll');
+
 	//click nav links to open header
 	$('#headerNav a').click(function(e) {
+    //header is opening
+    $('#logoTitle').addClass('open');
+
+    //remove noScroll when header animation stops to enable scrolling
+    setTimeout(function(){
+      $('body').removeClass('noScroll');
+    },7000);
 
 		//load pages html
 		var navUrl = $(this).attr('href');
 		$("#view").load(navUrl);
-				
+
 	//when bandLogo loads
 	var bandLogo = document.getElementById('bandLogo');
 	var bandLogoHt = parseInt(window.getComputedStyle(bandLogo).getPropertyValue("height"));
@@ -33,6 +43,13 @@ $('#logoTitle').css('backgroundColor', '#000'); //set background color to black
 	//get device width
 	var deviceWidth = document.documentElement.clientWidth;
 
+  //add active class to active nav link
+			var $this = $(this);
+			$('#headerNav a').removeClass('active');
+			$this.addClass('active');
+
+			$('#nowPlayBtn').addClass('bodyBtn');
+
 	//set Header ScrollMagic
 	var controller_header = new ScrollMagic({
 				globalSceneOptions: {
@@ -43,7 +60,7 @@ $('#logoTitle').css('backgroundColor', '#000'); //set background color to black
 	//open slideup to show page view
 	var tween_header = TweenMax.to("#logoTitle, .scrollmagic-pin-spacer", 7,
 	{'height': bandLogoSum + 40, 'minHeight': bandLogoSum + 40, 'backgroundPosition': '0 -630px' });
-	
+
 	//Mobile for 565 ~~~~~~~~~~~~
 	if (deviceWidth <= 480) {
 		var tween_header = TweenMax.to("#logoTitle, .scrollmagic-pin-spacer", 7,
@@ -56,28 +73,21 @@ $('#logoTitle').css('backgroundColor', '#000'); //set background color to black
 		{'backgroundPosition': '0 -360px' });
 	}//Mobile END
 
-	//add active class to active nav link
-			var $this = $(this);
-			$('#headerNav a').removeClass('active');
-			$this.addClass('active');
-
-			$('#nowPlayBtn').addClass('bodyBtn');
-
-//mobile for 569 hoz iphone 5 
+//mobile for 569 hoz iphone 5
 	if (deviceWidth === 568 || deviceWidth === 600) {
 	//console.log("this equal 568");
 	var tween_header = TweenMax.to("#logoTitle, .scrollmagic-pin-spacer", 7,
 		{'backgroundPosition': '0 -310px' });
-	} 
+	}
 
-	//mobile for 768 hoz phone 
+	//mobile for 768 hoz phone
 	if (deviceWidth === 768) {
 	//console.log("this equal 768");
 	var tween_header = TweenMax.to("#logoTitle, .scrollmagic-pin-spacer", 7,
 		{'backgroundPosition': '0 -412px' });
 	}
 
-	//mobile for 1024 hoz phone 
+	//mobile for 1024 hoz phone
 	if (deviceWidth === 1024) {
 	//console.log("this equal 1024");
 	var tween_header = TweenMax.to("#logoTitle, .scrollmagic-pin-spacer", 7,
@@ -96,7 +106,7 @@ if (deviceWidth == 667) {
 	//console.log("this is equal 667");
 	$('#logoTitle').css({'height': wHeight,'minHeight': wHeight});
 }
-	
+
 //mobile 565 ipone 5 hoz
 if (deviceWidth < 565) {
 	//console.log("this is less 565");
@@ -113,7 +123,6 @@ if (deviceWidth < 565) {
 	$('#headerNav a').click(function(){
 	    $('#headerNav').stop().slideUp(200, "easeInQuad");// slideUp END
 	});
-	
 }
 
 if (deviceWidth == 568 || deviceWidth >= 960) {
@@ -183,7 +192,7 @@ $('.bandBioLink').hide();
 		$('#bandMemPics div').removeClass('active');
 		$this.addClass('active');
 });
-       
+
 // Bio page scroll END ~~~~~~~~~~~~
 
 // Now Playing section open and close ~~~~~~~~~~~~
@@ -195,7 +204,6 @@ $('.overlay').click(function() {
 	$('#nowPlayWrap').addClass('fade');
 });
 
-
 //on swipeleft open nowPlayBox
 $('#nowPlayBtn').on("swipeleft",function(){
  	nowPlayBoxOpen();
@@ -204,18 +212,26 @@ $('#nowPlayBtn').on("swipeleft",function(){
 //on click open nowPlayBox
 $('#nowPlayBtn').click(function() {
 	nowPlayBoxOpen();
-});
 
+  //check to see if header and nowplay panel are open
+  //if both are open disable scroll on body
+  //else if only header open enable scroll again
+  if ($('#nowPlayBtn').hasClass('open') && ($('#logoTitle').hasClass('open'))) {
+    $('body').addClass('noScroll');
+  } else if ($('#logoTitle').hasClass('open')){
+    $('body').removeClass('noScroll');
+  }
+});
 
 //Open nowPlayBox
 function nowPlayBoxOpen() {
 
 	var wWidth = window.innerWidth;
 	var wHeight = window.innerHeight;
-	
+
 	//place iframe URL
 	var nowPlayVideo = '<iframe width="640" height="360" src="//www.youtube.com/embed/e0Wo040P_dk" frameborder="0" allowfullscreen=""></iframe>';
-		
+
 	$('.overlay').fadeIn();
 	$('#nowPlayBtn').toggleClass('open');
 
@@ -249,5 +265,5 @@ function nowPlayBoxOpen() {
 // Now Playing section open and close END ~~~~~~~~~~~~
 
 
- 
+
  }); // doc ready END

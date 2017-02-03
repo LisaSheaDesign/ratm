@@ -131,6 +131,9 @@ img {
   width: 100%; }
 
 /* ======================= Utilities ======================= */
+
+.noScroll {overflow: hidden;}
+
 html,
 body {
   height: 100%;
